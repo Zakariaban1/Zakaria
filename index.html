@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bandadi Zakaria - Portfolio</title>
+  <link rel="icon" href="/home/ubuntu/favicon_b.png" type="image/png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
@@ -304,6 +305,75 @@
       line-height: 1.5;
       word-wrap: break-word;
       hyphens: auto;
+    }
+    
+    /* Project Details Styles */
+    .project-details {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .project-details.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    .project-details h4 {
+      color: #38bdf8;
+      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .project-details .description {
+      color: #cbd5e1;
+      font-size: clamp(0.75rem, 2vw, 0.95rem);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(56, 189, 248, 0.1));
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      color: #f1f5f9;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+      font-weight: 500;
+    }
+    
+    .project-features {
+      margin-bottom: 1rem;
+    }
+    
+    .project-features ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .project-features li {
+      color: #94a3b8;
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
+      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    
+    .project-features li::before {
+      content: '✓';
+      color: #0ea5e9;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
     }
     
     .arrow-link {
@@ -631,171 +701,10 @@
     }
     
     .social-btn.whatsapp:hover {
-      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(37, 211, 102, 0.1));
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(34, 197, 94, 0.1));
       border-color: rgba(37, 211, 102, 0.3);
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(37, 211, 102, 0.2);
-    }
-    
-    .social-icon {
-      font-size: clamp(0.9rem, 3vw, 1.2rem);
-      filter: drop-shadow(0 0 5px rgba(14, 165, 233, 0.3));
-      flex-shrink: 0;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      background: #020617;
-      padding: clamp(1rem, 3vw, 1.5rem);
-      font-size: clamp(0.75rem, 2vw, 0.9rem);
-      color: #64748b;
-      border-top: 3px solid #0ea5e9;
-      width: 100%;
-      word-wrap: break-word;
-    }
-    
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(15px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease-in-out;
-      cursor: pointer;
-      padding: clamp(0.5rem, 3vw, 1rem);
-    }
-    
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .modal-content {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #0ea5e9;
-      border-radius: 20px;
-      padding: clamp(1rem, 4vw, 2rem);
-      text-align: center;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 50px rgba(14, 165, 233, 0.3);
-      transform: scale(0.8) translateY(50px);
-      transition: all 0.4s ease-in-out;
-      position: relative;
-      cursor: default;
-      max-width: min(500px, 90vw);
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    
-    .modal-overlay.active .modal-content {
-      transform: scale(1) translateY(0);
-    }
-    
-    .modal-content h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.2rem, 5vw, 2.5rem);
-      color: #0ea5e9;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-      animation: glow 2s ease-in-out infinite alternate;
-      word-wrap: break-word;
-    }
-    
-    .modal-content p {
-      color: #94a3b8;
-      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-      margin-bottom: 1rem;
-      word-wrap: break-word;
-      hyphens: auto;
-    }
-    
-    .modal-content .close-hint {
-      color: #64748b;
-      font-size: clamp(0.75rem, 2vw, 0.9rem);
-      font-style: italic;
-    }
-    
-    /* Skill Description Modal */
-    .skill-description-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(15px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease-in-out;
-      cursor: pointer;
-      padding: clamp(0.5rem, 3vw, 1rem);
-    }
-    
-    .skill-description-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .skill-description-content {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #0ea5e9;
-      border-radius: 20px;
-      padding: clamp(1rem, 4vw, 2rem);
-      text-align: center;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 50px rgba(14, 165, 233, 0.3);
-      transform: scale(0.8) translateY(50px);
-      transition: all 0.4s ease-in-out;
-      position: relative;
-      cursor: default;
-      max-width: min(500px, 90vw);
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    
-    .skill-description-overlay.active .skill-description-content {
-      transform: scale(1) translateY(0);
-    }
-    
-    .skill-description-content h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1rem, 4vw, 2rem);
-      color: #0ea5e9;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-      animation: glow 2s ease-in-out infinite alternate;
-      word-wrap: break-word;
-    }
-    
-    .skill-description-content p {
-      color: #94a3b8;
-      font-size: clamp(0.8rem, 2.2vw, 1rem);
-      margin-bottom: 1rem;
-      line-height: 1.6;
-      word-wrap: break-word;
-      hyphens: auto;
-    }
-    
-    .skill-description-content .close-hint {
-      color: #64748b;
-      font-size: clamp(0.7rem, 2vw, 0.9rem);
-      font-style: italic;
     }
     
     /* Animations */
@@ -816,6 +725,11 @@
     
     @keyframes headerFade {
       from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
     
@@ -946,12 +860,6 @@
         padding: 0.25rem 0.5rem;
         font-size: 0.75rem;
       }
-      
-      .modal-content,
-      .skill-description-content {
-        padding: 0.75rem;
-        max-width: 95vw;
-      }
     }
     
     /* Ensure no horizontal overflow */
@@ -1036,48 +944,263 @@
     </p>
   </section>
 
- 
   <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
+    
     <div class="project">
       <strong>Moroccan Guide Travel</strong>
       <p>A modern app for discovering Morocco's best travel destinations.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A comprehensive travel application designed to showcase Morocco's rich cultural heritage and stunning destinations. 
+          The app features interactive maps, detailed destination guides, cultural insights, and personalized travel recommendations 
+          to help tourists explore Morocco's diverse landscapes from the Atlas Mountains to the Sahara Desert.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Google Maps API</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Interactive destination maps with GPS navigation</li>
+            <li>Offline travel guides and cultural information</li>
+            <li>Photo galleries and virtual tours</li>
+            <li>Weather forecasts and travel tips</li>
+            <li>Multi-language support (Arabic, French, English)</li>
+            <li>User reviews and ratings system</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Football News</strong>
       <p>Football news aggregator with real-time updates.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A dynamic football news platform that aggregates content from multiple sports sources, providing real-time updates, 
+          match results, player statistics, and breaking news. The application features personalized news feeds based on 
+          user preferences and favorite teams, with push notifications for important updates.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Express.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">WebSocket</span>
+          <span class="tech-tag">News APIs</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Real-time news updates and live scores</li>
+            <li>Personalized news feed by favorite teams</li>
+            <li>Match schedules and results tracking</li>
+            <li>Player statistics and transfer news</li>
+            <li>Social sharing and commenting system</li>
+            <li>Push notifications for breaking news</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Streaming App</strong>
       <p>Built with Flutter for smooth video experience.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A cross-platform streaming application built with Flutter that delivers high-quality video content with adaptive 
+          streaming technology. The app supports multiple video formats, offline downloads, and provides a seamless viewing 
+          experience across different devices with personalized content recommendations.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Video Player</span>
+          <span class="tech-tag">Cloud Storage</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Adaptive video streaming with quality selection</li>
+            <li>Offline download and playback capabilities</li>
+            <li>Cross-platform compatibility (iOS/Android)</li>
+            <li>User authentication and profile management</li>
+            <li>Content categorization and search functionality</li>
+            <li>Chromecast and AirPlay support</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Speech to Text</strong>
       <p>Browser app that converts speech into text using JS.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A web-based speech recognition application that converts spoken words into text in real-time using the Web Speech API. 
+          The application supports multiple languages, provides text editing capabilities, and includes features for saving and 
+          exporting transcriptions. Perfect for note-taking, accessibility, and voice-controlled applications.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Web Speech API</span>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">Local Storage</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Real-time speech to text conversion</li>
+            <li>Multi-language support and detection</li>
+            <li>Text editing and formatting options</li>
+            <li>Save and export transcriptions</li>
+            <li>Voice commands for text manipulation</li>
+            <li>Responsive design for all devices</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Chess Game</strong>
       <p>Multiplayer chess game for Android with local logic.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A fully-featured chess game for Android devices with complete chess logic implementation, multiplayer capabilities, 
+          and an intuitive user interface. The game includes move validation, check/checkmate detection, and various game modes 
+          including local multiplayer and AI opponents with different difficulty levels.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Android SDK</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Custom UI</span>
+          <span class="tech-tag">Game Logic</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Complete chess rules implementation</li>
+            <li>Local multiplayer gameplay</li>
+            <li>AI opponents with multiple difficulty levels</li>
+            <li>Move history and game replay</li>
+            <li>Save and load game states</li>
+            <li>Customizable board themes and pieces</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Stock Management C++</strong>
       <p>Efficient C++ desktop app for managing stock.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A robust desktop application for inventory and stock management built with C++ and Qt framework. The system provides 
+          comprehensive tools for tracking inventory levels, managing suppliers, processing orders, and generating detailed reports. 
+          Designed for small to medium businesses requiring efficient stock control and inventory optimization.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Qt Framework</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Data Structures</span>
+          <span class="tech-tag">File I/O</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Inventory tracking and stock level monitoring</li>
+            <li>Supplier and vendor management</li>
+            <li>Purchase order processing and tracking</li>
+            <li>Low stock alerts and reorder notifications</li>
+            <li>Comprehensive reporting and analytics</li>
+            <li>Data backup and restore functionality</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Football Generation</strong>
       <p>UEFA style tournament generator built in C++.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A sophisticated tournament management system that generates UEFA-style football tournaments with automatic bracket 
+          creation, match scheduling, and results tracking. The application supports various tournament formats including 
+          group stages, knockout rounds, and handles complex tournament logistics with fair play rules and seeding systems.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">STL</span>
+          <span class="tech-tag">Algorithms</span>
+          <span class="tech-tag">Data Structures</span>
+          <span class="tech-tag">File Management</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Automatic tournament bracket generation</li>
+            <li>Group stage and knockout round support</li>
+            <li>Team seeding and fair play algorithms</li>
+            <li>Match scheduling and results tracking</li>
+            <li>Statistics and performance analytics</li>
+            <li>Export tournament data and reports</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <div class="project">
       <strong>Moroccan Card Game</strong>
       <p>Classic Moroccan cards in mobile format using Flutter.</p>
-      <a class="arrow-link" onclick="showModal(event)">see more</a>
+      <a class="arrow-link" onclick="toggleProjectDetails(this)">see more</a>
+      <div class="project-details">
+        <h4>Project Overview</h4>
+        <p class="description">
+          A digital adaptation of traditional Moroccan card games built with Flutter, preserving the cultural authenticity 
+          while providing modern mobile gaming experience. The app features multiple game variants, online multiplayer 
+          capabilities, and educational content about Moroccan card game traditions and rules.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Game Logic</span>
+          <span class="tech-tag">Animations</span>
+        </div>
+        <div class="project-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Multiple traditional Moroccan card game variants</li>
+            <li>Online multiplayer with matchmaking</li>
+            <li>Authentic card designs and animations</li>
+            <li>Tutorial mode for learning game rules</li>
+            <li>Leaderboards and achievement system</li>
+            <li>Cultural information and game history</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1188,15 +1311,6 @@
     <p>&copy; 2024 Bandadi Zakaria.</p>
   </footer>
 
-  <!-- Project Details Modal -->
-  <div class="modal-overlay" id="projectModal">
-    <div class="modal-content">
-      <h3 id="projectTitle">Project Title</h3>
-      <p id="projectDescription">Project description will appear here.</p>
-      <p class="close-hint">Click anywhere to close</p>
-    </div>
-  </div>
-
   <!-- Skill Description Modal -->
   <div class="skill-description-overlay" id="skillModal">
     <div class="skill-description-content">
@@ -1214,12 +1328,22 @@
       once: true,
       offset: 100
     });
-    function showModal(event) {
+
+    // Toggle project details
+    function toggleProjectDetails(element) {
       event.preventDefault();
-      const modal = document.getElementById('projectModal');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      const project = element.closest('.project');
+      const details = project.querySelector('.project-details');
+      
+      if (details.classList.contains('active')) {
+        details.classList.remove('active');
+        element.textContent = 'see more';
+      } else {
+        details.classList.add('active');
+        element.textContent = 'see less';
+      }
     }
+
     // Mobile Menu Functionality
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileNav = document.getElementById('mobileNav');
@@ -1285,13 +1409,6 @@
       }
     });
 
-    // Project Details Modal
-    function showProjectDetails(title, description) {
-      document.getElementById('projectTitle').textContent = title;
-      document.getElementById('projectDescription').textContent = description;
-      document.getElementById('projectModal').classList.add('active');
-    }
-
     // Skill Description Modal
     function showSkillDescription(skill, description) {
       document.getElementById('skillTitle').textContent = skill;
@@ -1300,12 +1417,6 @@
     }
 
     // Close modals when clicking outside
-    document.getElementById('projectModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.classList.remove('active');
-      }
-    });
-
     document.getElementById('skillModal').addEventListener('click', function(e) {
       if (e.target === this) {
         this.classList.remove('active');
@@ -1369,4 +1480,3 @@
   </script>
 </body>
 </html>
-
